@@ -11,12 +11,9 @@ def loginUser(request):
   if request.method == "POST":
     username = request.POST.get('username')
     password = request.POST.get('password')
-    print("+++++++++++")
     print(username)
-    print("+++++++++++")
     user = authenticate(username=username, password=password)
     print(user)
-    print("+++++++++++")
     if user is not None:
       login(request, user)
       return redirect('/')
