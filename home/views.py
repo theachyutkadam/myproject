@@ -6,7 +6,7 @@ from django.contrib import messages
 def index(request):
   if request.user.is_anonymous:
     return redirect('/login')
-  return render(request, 'index.html')
+  return render(request, 'home.html')
 
 def loginUser(request):
   if request.method == "POST":
@@ -40,9 +40,4 @@ def contact(request):
   return render(request, 'contact.html')
 
 def home(request):
-  # return HttpResponse("this is the testng index page")
-  context = {
-    "first_name": "Achyut",
-    "last_name": "Kadam"
-  }
-  return render(request, 'home.html', context)
+  return render(request, 'home.html')
