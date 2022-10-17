@@ -34,9 +34,6 @@ def find_student(request, id):
   return student
 
 def create(request):
-  print("+++++++++++++++++")
-  print(request)
-  print("+++++++++++++++++")
   if request.method == "POST":
     form = StudentForm(request.POST)
     if form.is_valid():
