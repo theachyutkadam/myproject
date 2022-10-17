@@ -1,21 +1,24 @@
 from django.shortcuts import render, redirect
-from student.forms import StudentFrom
-from student.models import Student
+from .forms import StudentForm
+from .models import Student
 
 # Create your views here.
 def index(request):
   students = Student.objects.all()
-  return render(request, "index.html", {'students': students})
+  return render(request, "student/index.html", {'students': students})
+
+def new(request):
+  return render(request, "student/new.html")
 
 def show(request, id):
   student = find_student(id)
   # student = Student.objects.get(id=id)
-  return render(request, "show.html", {'student': student})
+  return render(request, "student/show.html", {'student': student})
 
 def edit(request, id):
   student = find_student(id)
   # student = Student.objects.get(id=id)
-  return render(request, "show.html", {'student': student})
+  return render(request, "student/show.html", {'student': student})
 
 def destroy(request, id):
   student = find_student(id)
@@ -27,10 +30,15 @@ def find_student(request, id):
   student = Student.objects.get(id=id)
   return student
 
-
 def create(request):
+  print("______________++++++++++++")
+  print(request.method)
   if request.method == "POST":
     form = StudentForm(request.POST)
+    print("++++++++++++")
+    print(form.is_valid())
+    breakpoint()
+    print("++++++++++++")
     if form.is_valid():
       try:
         form.save()
@@ -39,7 +47,7 @@ def create(request):
         pass
   else:
     form = StudentForm()
-  return render(request, 'index.html', {'form': form})
+  return render(request, 'student/index.html', {'form': form})
 
 def update(request, id):
   student = find_student(id)
@@ -48,4 +56,4 @@ def update(request, id):
   if form.is_valid():
     form.save()
     return redirect("/show")
-  return render(request, 'edit.html', {'student': student})
+  return render(request, 'student/edit.html', {'student': student})
