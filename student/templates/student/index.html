@@ -29,8 +29,9 @@
           <td>{{ student.birth_date }}</td>
           <td>{{ student.is_active }}</td>
           <td>
-            <a href="/edit/{{ student.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
-            <a href="/delete/{{ student.id }}">Delete</a>
+            <a href="show/{{ student.id }}"><span class="glyphicon glyphicon-pencil">Show</span></a>
+            <a href="edit/{{ student.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+            <a href="delete/{{ student.id }}">Delete</a>
           </td>
         </tr>
         {% endfor %}
