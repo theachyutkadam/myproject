@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .teacher.forms import TeacherForm
-from .teacher.models import Teacher
+from .forms import TeacherForm
+from .models import Teacher
 
 # Create your views here.
 def index(request):
