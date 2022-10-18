@@ -4,7 +4,7 @@ from student import views
 
 urlpatterns = [
   path('admin/', admin.site.urls),
-  path('index', views.index, name="index-page"),
+  path('index', views.index, name="student-index-page"),
   path('new', views.new , name="new-page"),
   path('create', views.create , name="create-page"),
 

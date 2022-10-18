@@ -5,9 +5,6 @@ from .models import Teacher
 # Create your views here.
 def index(request):
   teachers = Teacher.objects.all()
-  print("++++++++++++++++++D")
-  print(teachers)
-  print("++++++++++++++++++D")
   return render(request, "teacher/index.html", {'teachers': teachers})
 
 def new(request):
