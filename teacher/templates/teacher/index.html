@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Teacher Records</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <table class="table table-striped table-bordered table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Contact</th>
+          <th>Address</th>
+          <th>BirthDate</th>
+          <th>IsActive</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for teacher in teachers %}
+        <tr>
+          <td>{{ teacher.id }}</td>
+          <td>{{ teacher.contact }}</td>
+          <td>{{ teacher.address }}</td>
+          <td>{{ teacher.birth_date }}</td>
+          <td>{{ teacher.is_active }}</td>
+          <td>
+            <a href="show/{{ teacher.id }}"><span class="glyphicon glyphicon-pencil">Show</span></a>
+            <a href="edit/{{ teacher.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+            <a href="delete/{{ teacher.id }}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <center><a href="new" class="btn btn-primary">Add New Record</a></center>
+  </body>
+
+</html>
