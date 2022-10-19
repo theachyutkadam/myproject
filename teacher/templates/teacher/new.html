@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Update</title>
+    <title>New</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
@@ -16,41 +16,30 @@
         <div class="form-group row">
           <label class="col-sm-1 col-form-label"></label>
           <div class="col-sm-4">
-            <h3>Create Student</h3>
+            <h3>Create Teacher</h3>
           </div>
         </div>
 
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Student Contact:</label>
+          <label class="col-sm-2 col-form-label">Teacher Contact:</label>
           <div class="col-sm-4">
             <input type="text" name="contact" id="contact" required maxlength="15">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Student Address:</label>
+          <label class="col-sm-2 col-form-label">Teacher Address:</label>
           <div class="col-sm-4">
             <input type="text" name="address" id="address" required maxlength="254">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Student Birthdate:</label>
+          <label class="col-sm-2 col-form-label">Teacher Birthdate:</label>
           <div class="col-sm-4">
             <input type="date" name="birth_date" id="birth_date">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Class Teacher:</label>
-          <div class="col-sm-4">
-
-            <select name="teacher" id="teacher">
-              {% for teacher in teachers %}
-                <option value="{{ teacher.id }}">{{ teacher.contact }}</option>
-              {% endfor %}
-            </select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Student Status:</label>
+          <label class="col-sm-2 col-form-label">Teacher Status:</label>
           <div class="col-sm-4">
             <input type="radio" name="is_active" id="is_active" value="true"> True
             <input type="radio" name="is_active" id="is_active" value="false"> False
@@ -61,7 +50,7 @@
           <label class="col-sm-1 col-form-label"></label>
           <div class="col-sm-4">
             <button type="submit" class="btn btn-success">Create</button>
-            <a href="{% url 'student-index-page' %}">Back</a><br><br>
+            <a href="teacher-index-page" class="btn btn-primary"></a></center>
           </div>
         </div>
       </div>

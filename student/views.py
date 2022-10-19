@@ -1,17 +1,17 @@
 from django.shortcuts import render, redirect
 from .forms import StudentForm
 from .models import Student
+from .models import Teacher
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
   students = Student.objects.all()
-  print("++++++++++++++++++D")
-  print(students)
-  print("++++++++++++++++++D")
   return render(request, "student/index.html", {'students': students})
 
 def new(request):
-  return render(request, "student/new.html")
+  teachers = Teacher.objects.all()
+  return render(request, "student/new.html", {'teachers': teachers})
 
 def show(request, id):
   student = find_student(request, id)
@@ -27,16 +27,14 @@ def destroy(request, id):
   student = find_student(request, id)
   # student = Student.objects.get(id=id)
   student.delete()
-  return redirect("student/index/")
+  messages.success(request, 'Contact Deleted Successfully!')
+  return redirect("index")
 
 def find_student(request, id):
   student = Student.objects.get(id=id)
   return student
 
 def create(request):
-  print("+++++++++++++++++")
-  print(request)
-  print("+++++++++++++++++")
   if request.method == "POST":
     form = StudentForm(request.POST)
     if form.is_valid():

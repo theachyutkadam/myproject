@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from student import views
+from teacher import views
 
 urlpatterns = [
   path('admin/', admin.site.urls),
-  path('index', views.index, name="student-index-page"),
+  path('index', views.index, name="teacher-index-page"),
   path('new', views.new , name="new-page"),
   path('create', views.create , name="create-page"),
 
