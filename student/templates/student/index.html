@@ -26,6 +26,7 @@
           <th>Contact</th>
           <th>Address</th>
           <th>BirthDate</th>
+          <th>Teacher</th>
           <th>IsActive</th>
           <th>Actions</th>
         </tr>
@@ -37,6 +38,7 @@
           <td>{{ student.contact }}</td>
           <td>{{ student.address }}</td>
           <td>{{ student.birth_date }}</td>
+          <td>{{ student.teacher.contact }}</td>
           <td>{{ student.is_active }}</td>
           <td>
             <a href="show/{{ student.id }}"><span class="glyphicon glyphicon-pencil">Show</span></a>

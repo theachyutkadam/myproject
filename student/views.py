@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import StudentForm
 from .models import Student
+from .models import Teacher
 from django.contrib import messages
 
 # Create your views here.
@@ -9,7 +10,8 @@ def index(request):
   return render(request, "student/index.html", {'students': students})
 
 def new(request):
-  return render(request, "student/new.html")
+  teachers = Teacher.objects.all()
+  return render(request, "student/new.html", {'teachers': teachers})
 
 def show(request, id):
   student = find_student(request, id)
