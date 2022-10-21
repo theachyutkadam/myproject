@@ -19,7 +19,7 @@ def loginUser(request):
       login(request, user)
       return redirect('/')
 
-  return render(request, "login.html")
+  return render(request, "/login.html")
 
 def logoutUser(request):
   logout(request)

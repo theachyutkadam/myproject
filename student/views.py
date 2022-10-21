@@ -10,6 +10,10 @@ def index(request):
   return render(request, "student/index.html", {'students': students})
 
 def new(request):
+  if request.user.is_authenticated:
+    print("Logged in")
+  else:
+    print("Not logged in")
   teachers = Teacher.objects.all()
   return render(request, "student/new.html", {'teachers': teachers})
 
