@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <title>Employee Records</title>
-    <!-- {% load staticfiles %} -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static '/css/style.css' %}" /> -->
   </head>
 
   <body>
@@ -19,7 +18,7 @@
         </div>
       {% endfor %}
     {% endif %}
-    <table class="table table-striped table-bordered table-sm">
+    <table class="table table-hover table-striped table-bordered table-sm">
       <thead class="thead-dark">
         <tr>
           <th>ID</th>

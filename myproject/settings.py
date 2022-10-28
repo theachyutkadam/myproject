@@ -127,3 +127,5 @@ STATICFILES_DIRS = [
   os.path.join(BASE_DIR, 'static'),
   # BASE_DIR / "static"
 ]
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
