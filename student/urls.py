@@ -1,3 +1,4 @@
+from tokenize import PlainToken
 from django.contrib import admin
 from django.urls import path
 from student import views
@@ -14,4 +15,3 @@ urlpatterns = [
   path('update/<int:id>', views.update , name="update-page"),
   path('delete/<int:id>', views.destroy , name="destroy-page"),
 ]
-

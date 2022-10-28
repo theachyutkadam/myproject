@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import logout, authenticate, login
+# from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
 # Create your views here.
 # def loginUser(request):
@@ -21,8 +21,8 @@ from django.contrib import messages
 #   return redirect('/login')
 
 def index(request):
-  if request.user.is_anonymous:
-    return redirect('/login')
+  # if request.user.is_anonymous:
+  #   return redirect('/login')
   return render(request, 'home.html')
 
 def contact(request):
